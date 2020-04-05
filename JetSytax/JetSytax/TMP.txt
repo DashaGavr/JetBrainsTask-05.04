@@ -1,0 +1,2 @@
+java -jar antlr4-csharp-4.jar -Dlanguage=CSharp -o Generated XamlGrammar.g4
+pause

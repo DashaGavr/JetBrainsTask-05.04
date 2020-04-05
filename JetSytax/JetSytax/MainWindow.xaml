@@ -1,0 +1,36 @@
+﻿<Window x:Class="JetSytax.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JetSytax"
+        mc:Ignorable="d"
+        ResizeMode="CanResize"
+        SizeToContent="WidthAndHeight"
+        Title="MainWindow" Height="450" Width="800">
+    <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
+        <Grid x:Name="grid1">
+            <Menu x:Name="Mainmenu" HorizontalAlignment="Left" Height="18" VerticalAlignment="Top" Width="793">
+                <MenuItem Name="file" Header="File">
+                    <MenuItem Name="newfile" Header="New" Click="New_Click"/>
+                    <MenuItem Name="openfile" Header="Open" Click="Openfile_Click"/>
+                    <MenuItem Name="savefile" Header="Save" Click="Save_Click"/>
+                </MenuItem>
+                <MenuItem Name ="view" Header="View">
+                    <MenuItem Name ="background" Header="Background" Click="ChangeBackground"/>
+                    <MenuItem Name ="fontin" Header="Increase front size" Click="IncreaseFontSize"/>
+                    <MenuItem Name ="fontdec" Header="Decrease front size" Click="DecreaseFontSize" Height="22" Margin="0,0,0.333,0"/>
+                </MenuItem>
+            </Menu>
+
+            <RichTextBox Name ="Code" AcceptsTab="True" HorizontalAlignment="Left" Height="522" VerticalAlignment="Top" Width="793" Margin="0,18,0,-136.667" SelectionChanged="Editor"
+                         TextChanged="Highlighting">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text=""/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+        </Grid>
+    </ScrollViewer>
+</Window>
